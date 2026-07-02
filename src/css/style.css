@@ -1,0 +1,43 @@
+/*==========================*/
+/*         VARIABLES        */
+/*==========================*/
+
+:root {
+
+    
+    --purple-500: #854dff;
+    --red-400: #ff5757;
+
+    --white: #ffffff;
+    --grey-100: #f0f0f0;
+    --grey-200: #dbdbdb;
+    --grey-500: #716f6f;
+    --black: #000000;
+
+    --font-primary: 'Poppins', 'Century Gothic', 'Futura', -apple-system, 'Segoe UI', sans-serif;
+
+}
+
+
+
+/*==========================*/
+/*           GERALS         */
+/*==========================*/
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-weight: 400;
+    font-display: swap;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--white);
+}
