@@ -123,6 +123,7 @@ body {
 }
 
 .col input::placeholder {
+    text-transform: uppercase;
     color: var(--grey-500);
 }
 
@@ -233,4 +234,116 @@ body {
     }
 
     
+}
+
+
+
+/*=======================================*/
+/*           ~~~~~ DESKTOP ~~~~~         */
+/*=======================================*/
+
+@media (min-width: 960px) {
+
+    /*==========================*/
+    /*        CONTAINER         */
+    /*==========================*/
+
+    .container {
+        gap: 3rem;
+        max-width: 40rem;
+        padding: 3rem;
+    }
+
+
+
+    /*==========================*/
+    /*           FORM           */
+    /*==========================*/
+
+    #form {
+        padding-bottom: 3rem;
+    }
+
+    .form--content {
+        width: 80%;
+    }
+
+    .col label {
+        font-size: 1rem;
+    }
+
+    .col input {
+        font-size: 2rem;
+    }
+
+    .btn-submit {
+        --size: 5rem;
+        right: 0;
+        transform: translate(0, 50%);
+    }
+
+
+
+    
+    /*==========================*/
+    /*      CONTAINER BODY      */
+    /*==========================*/
+    
+    .container--body p {
+        font-size: 4rem;
+    }
+
+}
+
+@media (min-width: 1280px) {
+
+    /*==========================*/
+    /*        CONTAINER         */
+    /*==========================*/
+
+    .container {
+        max-width: 45rem;
+    }
+
+    
+    /*==========================*/
+    /*      CONTAINER BODY      */
+    /*==========================*/
+    
+    .container--body p {
+        font-size: 5rem;
+    }
+
+}
+
+@media (min-width: 1440px) {
+
+    /*==========================*/
+    /*        CONTAINER         */
+    /*==========================*/
+
+    .container {
+        max-width: 50rem;
+    }
+
+
+
+    /*==========================*/
+    /*           FORM           */
+    /*==========================*/
+
+    .form--content {
+        width: 70%;
+    }
+    
+
+
+    /*==========================*/
+    /*      CONTAINER BODY      */
+    /*==========================*/
+    
+    .container--body p {
+        font-size: 5rem;
+    }
+
 }
