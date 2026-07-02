@@ -32,6 +32,18 @@
     box-sizing: border-box;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: none;   
+    appearance: none;
+}
+
 body {
     font-family: var(--font-primary);
     font-size: 2rem;
@@ -120,6 +132,13 @@ body {
     border-radius: 0.5rem;
     border: 1px solid var(--grey-200);
     color: var(--black);
+    cursor: pointer;
+    transition: border-color .2s ease-in-out;
+}
+
+.col input:hover,
+.col input:focus {
+    border-color: var(--purple-500);
 }
 
 .col input::placeholder {
@@ -138,6 +157,13 @@ body {
     border: none;
     border-radius: 50%;
     background-color: var(--purple-500);
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+    background-color: var(--black);
 }
 
 .icon {
