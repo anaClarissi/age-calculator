@@ -99,7 +99,6 @@ body {
 
 #form {
     position: relative;
-    padding-bottom: 4rem;
     border-bottom: 1px solid var(--grey-200);
 }
 
@@ -114,6 +113,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
     row-gap: 0.25rem;
+    padding-bottom: 4rem;
 }
 
 .col label {
@@ -141,9 +141,45 @@ body {
     border-color: var(--purple-500);
 }
 
+.col input:focus {
+    outline: 1px solid var(--purple-500);
+}
+
 .col input::placeholder {
     text-transform: uppercase;
     color: var(--grey-500);
+}
+
+#form.error .col:nth-child(2),
+#form.error .col:nth-child(3) {
+    padding-bottom: 5.2rem;
+}
+
+#form.error .col,
+.col:has(input[class="error"]) {
+    padding-bottom: 3rem;
+}
+
+#form.error .col label,
+.col:has(input[class="error"]) label{
+    color: var(--red-400);
+}
+
+#form.error .col input,
+.col:has(input[class="error"]) input {
+    border-color: var(--red-400);
+}
+
+#form.error .col input::placeholder,
+.col:has(input[class="error"]) input::placeholder {
+    color: var(--red-400);
+}
+
+.error-message {
+    font-size: 0.65rem;
+    font-style: italic;
+    color: var(--red-400);
+    text-align: center;
 }
 
 .btn-submit {
@@ -208,7 +244,7 @@ body {
     }
 
     .col input {
-        font-size: 1.45rem;
+        font-size: 1.15rem;
     }
 
 
@@ -286,12 +322,12 @@ body {
     /*           FORM           */
     /*==========================*/
 
-    #form {
-        padding-bottom: 3rem;
-    }
-
     .form--content {
         width: 80%;
+    }
+
+    .col {
+        padding-bottom: 2rem;
     }
 
     .col label {
@@ -302,10 +338,26 @@ body {
         font-size: 2rem;
     }
 
+    #form.error .col:nth-child(2),
+    #form.error .col:nth-child(3) {
+        padding-bottom: 2.2rem;
+    }
+
+    #form.error .col,
+    .col:has(input[class="error"]) {
+        padding-bottom: 1rem;
+    }
+
     .btn-submit {
         --size: 5rem;
         right: 0;
         transform: translate(0, 50%);
+    }
+    
+
+    .error-message {
+        font-size: 0.75rem;
+        text-align: left;
     }
 
 
@@ -329,6 +381,16 @@ body {
 
     .container {
         max-width: 45rem;
+    }
+
+
+
+    /*==========================*/
+    /*           FORM           */
+    /*==========================*/
+
+    .col {
+        padding-bottom: 2rem;
     }
 
     
