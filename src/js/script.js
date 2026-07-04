@@ -37,11 +37,8 @@ form.addEventListener("submit", (event) => {
     const isMonthValid = checkMonth(month);
     
     const isDayValid = checkDay(day);
-
-
-    hiddenError(day);
     
-    if (isYearValid, isMonthValid, isDayValid) {
+    if (isYearValid && isMonthValid && isDayValid) {
 
         const isFullDateValid = checkFullDate(year, month, day);
 
@@ -63,7 +60,7 @@ const inputs = document.querySelectorAll('input[type="number"]');
 
 inputs.forEach(input => {
 
-    input.addEventListener("click", () => hiddenError(input));
+    input.addEventListener("input", () => hiddenError(input));
 
 });
 
@@ -129,19 +126,31 @@ function checkFullDate(year, month, day) {
 
     const date = new Date(year, month - 1, day);
 
+    const today = new Date();
+
+    today.setHours(0, 0, 0, 0);
+
     if (
-        date.getFullYear() === year &&
-        date.getMonth() === (month - 1) &&
-        date.getDate() === day
+        date.getFullYear() !== year ||
+        date.getMonth() !== (month - 1) ||
+        date.getDate() !== day
     ) {
 
-        return true;
-
+        showErrorForm();
+        
+        return false;
+        
     }
 
-    showErrorForm();
+    if (date > today) {
 
-    return false;
+        showErrorForm();
+
+        return false;
+
+    }
+    
+    return true;
 
 }
 
@@ -155,9 +164,7 @@ function checkDay(day) {
 
     }
 
-    if (day.value > 31) {
-
-        isValid = false;
+    if (!Number.isInteger(Number(day.value)) || day.value > 31 || day.value < 1) {
 
         showError(day, errors.invalid.day);
 
@@ -179,7 +186,7 @@ function checkMonth(month) {
 
     }
 
-    if (month.value > 12) {
+    if (!Number.isInteger(Number(month.value)) || month.value > 12 || month.value < 1) {
 
         showError(month, errors.invalid.month);
 
@@ -203,7 +210,9 @@ function checkYear(year) {
 
     }
 
-    if (year.value > currentYear) {
+    const digits = String(year.value).length;
+
+    if (!Number.isInteger(Number(year.value)) || year.value > currentYear || year.value < 1 || digits > 4) {
 
         showError(year, errors.invalid.year);
 
